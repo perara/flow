@@ -1,0 +1,6 @@
+table Numpy {
+  data: [ubyte];
+
+}
+
+root_type Numpy;

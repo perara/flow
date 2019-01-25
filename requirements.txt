@@ -1,0 +1,6 @@
+
+numpy
+protobuf
+ujson
+uvloop
+pyuv
