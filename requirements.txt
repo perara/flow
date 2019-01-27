@@ -4,3 +4,4 @@ protobuf
 ujson
 uvloop
 pyuv
+python-rapidjson

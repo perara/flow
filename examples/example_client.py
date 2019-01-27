@@ -1,16 +1,18 @@
 import asyncio
 
-from client import MCMLSocket
+from client import Flow
 
 if __name__ == "__main__":
 
+    loop = asyncio.get_event_loop()
+
     async def func():
-        x = MCMLSocket()
-        await x.adial("0.0.0.0", 41000)
+        x = Flow(loop=loop)
+        await x.client.adial("0.0.0.0", 41000)
 
         while True:
-            x.send("Lalrl")
-            await asyncio.sleep(1)
+            await x.client.send("ewrgwe+rogkweåprigjewåprijgweåoprjgwåpeorjgåpowerjg")
 
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(func())
+    loop.create_task(func())
+
+    loop.run_forever()
