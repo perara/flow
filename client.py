@@ -1,6 +1,4 @@
 import pickle
-import time
-
 import uvloop
 import asyncio
 import socket
@@ -49,11 +47,14 @@ class FlowInterface(asyncio.Protocol):
         except (OSError, NameError):
             pass
 
-    def serialize(self, data):
+    @staticmethod
+    def serialize(data):
         return pickle.dumps(data, protocol=pickle.HIGHEST_PROTOCOL)
 
-    def deserialize(self, bytedata):
+    @staticmethod
+    def deserialize(bytedata):
         return pickle.loads(bytedata)
+
 
 class FlowServer(FlowInterface):
 
